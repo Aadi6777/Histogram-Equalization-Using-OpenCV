@@ -70,12 +70,48 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 ## Program
 
 ### Developed By:
-**Name:** ____________________________  
+**Name:** Aadipranav S
 
 ### Register No:
-____________________________  
+212224230001
 
+```
+img_bgr= cv2.imread("parrot.jpg",0)
+plt.imshow(img_bgr,cmap="grey")
+plt.title("go")
+```
+
+```
+plt.hist(img_bgr.ravel(),256,range=[0,256])
+plt.title("Histogram of Original Image")
+plt.show()
+```
+
+```
+equalized_img = cv2.equalizeHist(img_bgr)
+plt.figure(figsize=(12,10))
+plt.subplot(2,2,1)
+plt.imshow(img_bgr, cmap='gray')
+plt.title("Original Grayscale Image")
+plt.subplot(2,2,2)
+plt.hist(img_bgr.ravel(), bins=256, range=[0,256])
+plt.title("Histogram of Original Image")
+plt.xlabel("Pixel Intensity")
+plt.ylabel("Frequency")
+plt.subplot(2,2,3)
+plt.imshow(equalized_img, cmap='gray')
+plt.title("Equalized Image")
+plt.axis('off')
+plt.subplot(2,2,4)
+plt.hist(equalized_img.ravel(), bins=256, range=[0,256])
+plt.title("Histogram of Equalized Image")
+plt.xlabel("Pixel Intensity")
+plt.ylabel("Frequency")
+plt.tight_layout()
+plt.show()
+```
 ---
+
 
 ##  Output
 
@@ -92,6 +128,8 @@ ____________________________
 - Histogram of B, G, R channels is plotted  
 - Enhanced image after HSV-based equalization is displayed  
 - Histogram of enhanced image shows better intensity distribution  
+
+<img width="923" height="759" alt="image" src="https://github.com/user-attachments/assets/47287117-5d73-4a85-b5f6-54643270eb42" />
 
 ---
 
